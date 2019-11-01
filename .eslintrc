@@ -1,0 +1,15 @@
+{
+  "extends": "standard",
+  "rules": {
+    "semi": [2, 'always']
+  },
+  "globals": {
+    "describe": "readonly",
+    "it": "readonly",
+    "before": "readonly",
+    "after": "readonly",
+    "beforeAll": "readonly",
+    "afterAll": "readonly",
+    "fetch": 'readonly'
+  }
+}
