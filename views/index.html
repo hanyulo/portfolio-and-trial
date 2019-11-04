@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=devie-width, initial-scale=1">
     <title>Han's url shortener</title>
 		<link rel="stylesheet" href="/styles/style.css">
-    <script defer type="text/javascript" src="/scripts/createOriginalUrl.js"></script>
+    <script type="module" src="/scripts/createOriginalUrl.js"></script>
   </head>
   <body>
     <div class="container">
@@ -15,7 +15,7 @@
       <div class="inputPanel">
         <div>Orignal Url: </div>
         <input class="input" type="text" id="originalUrl"></input>
-        <input class="button" type="submit" onclick="createOriginalUrl()">
+        <input class="button" id="submitButton" type="submit">
       </div>
       <footer>
       </footer>

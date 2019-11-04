@@ -1,12 +1,16 @@
-import config from '../../config/config';
+import test from './test.js';
 
-const createOriginalUrl = () => {
+const apiDev = 'http://localhost:8080'
+const apiProduct = 'https://url-shortener-back.appspot.com';
+
+const createOriginalUrl = async () => {
+  test();
   const elem = document.getElementById('originalUrl');
   const originalUrl = elem.value;
   const postData = async (obj) => {
-    const response = await fetch(config.apiOrigin, {
+    const response = await fetch(`${apiDev}/api/shorturl/new`, {
       method: 'POST',
-      mode: 'no-cors',
+      mode: 'cors',
       cache: 'no-cache',
       credentials: 'omit',
       headers: {
@@ -16,10 +20,12 @@ const createOriginalUrl = () => {
       referrer: 'no-referrer',
       body: JSON.stringify(obj)
     });
-    return response.json();
+    const data = await response.json();
+    return data;
   };
-  const data = postData({ originalUrl });
-  console.log('data: ', data);
+  const data = await postData({ originalUrl });
+  console.log(data);
 };
 
+document.querySelector('#submitButton').addEventListener('click', createOriginalUrl);
 // module.exports = createOriginalUrl;
