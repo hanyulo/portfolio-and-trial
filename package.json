@@ -5,7 +5,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "react-hot-loader": "^4.12.15"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

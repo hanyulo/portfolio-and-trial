@@ -1,31 +1,29 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const config = require('./config/config');
-const webpack = require('webpack');
 
 module.exports = {
   mode: 'production',
   entry: {
-    app: './src/scripts/index.js'
+    app: './src/scripts/index.js',
   },
   devtool: 'source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       favicon: './public/assets/profile_sketch.png',
-      template: './public/index.html'
-    })
+      template: './public/index.html',
+    }),
   ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
-    }
+      chunks: 'all',
+    },
   },
   module: {
     rules: [
@@ -37,19 +35,19 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[name]__[local]--[hash:base64:5]'
-              }
-            }
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
+            },
           },
           'postcss-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
-      }
-    ]
-  }
+        loader: 'babel-loader',
+      },
+    ],
+  },
 };
