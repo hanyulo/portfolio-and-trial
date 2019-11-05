@@ -9,7 +9,7 @@ module.exports = {
   entry: {
     app: './src/scripts/index.js'
   },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -21,6 +21,11 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   module: {
     rules: [

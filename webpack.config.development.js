@@ -14,7 +14,6 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       favicon: './public/assets/profile_sketch.png',
       template: './public/index.html'
