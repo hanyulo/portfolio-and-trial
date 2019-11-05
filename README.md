@@ -6,4 +6,6 @@ url shortener front end project
 1. bundle (src and dist)
 2. dist
 3. add react
-4. 
+4. HMR
+ * homapge
+ * entry file

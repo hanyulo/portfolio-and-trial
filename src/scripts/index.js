@@ -1,6 +1,18 @@
 import createOriginalUrl from './createOriginalUrl';
 import styles from '../styles/style.scss';
 
+const createSubmitButton = () => {
+  const elem = document.createElement('input');
+  elem.classList.add(`${styles.button}`);
+  elem.setAttribute('type', 'submit');
+  elem.setAttribute('id', 'submitButton');
+  elem.addEventListener('click', createOriginalUrl);
+  return elem;
+};
+
+const submitButton = createSubmitButton();
+const contentWrapper = document.createElement('div');
+
 const main = () => {
   const bodyElement = document.getElementsByTagName("BODY")[0];
 
@@ -9,7 +21,6 @@ const main = () => {
   headerH1.textContent = "Welcome to Han's URL shortener";
   header.appendChild(headerH1);
 
-  const contentWrapper = document.createElement('div');
   contentWrapper.classList.add(`${styles.inputPanel}`);
 
   const titleElement = document.createElement('div');
@@ -20,12 +31,6 @@ const main = () => {
   userInput.setAttribute('type', 'text');
   userInput.setAttribute('id', 'originalUrl');
 
-  const submitButton = document.createElement('input');
-  submitButton.classList.add(`${styles.button}`);
-  submitButton.setAttribute('type', 'submit');
-  submitButton.setAttribute('id', 'submitButton');
-  submitButton.addEventListener('click', createOriginalUrl);
-
   contentWrapper.appendChild(titleElement);
   contentWrapper.appendChild(userInput);
   contentWrapper.appendChild(submitButton);
@@ -35,4 +40,21 @@ const main = () => {
 };
 
 main();
-// document.querySelector('#submitButton').addEventListener('click', createOriginalUrl);
+
+let initial = true;
+let lastSubmitButton = null;
+if (module.hot) {
+  module.hot.accept('./createOriginalUrl.js', function () {
+    const newSubmitButton = createSubmitButton();
+    if (initial) {
+      contentWrapper.removeChild(submitButton);
+      contentWrapper.appendChild(newSubmitButton);
+      lastSubmitButton = newSubmitButton;
+      initial = false;
+    } else {
+      contentWrapper.removeChild(lastSubmitButton);
+      contentWrapper.appendChild(newSubmitButton);
+      lastSubmitButton = newSubmitButton;
+    }
+  });
+}

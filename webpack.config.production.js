@@ -15,8 +15,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       favicon: './public/assets/profile_sketch.png',
       template: './public/index.html'
-    }),
-    new webpack.HotModuleReplacementPlugin()
+    })
   ],
   output: {
     filename: '[name].bundle.js',

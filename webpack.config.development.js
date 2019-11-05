@@ -7,7 +7,10 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: {
-    app: './src/scripts/index.js'
+    app: [
+      './src/scripts/index.js',
+      'webpack-hot-middleware/client'
+    ]
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -16,7 +19,8 @@ module.exports = {
       favicon: './public/assets/profile_sketch.png',
       template: './public/index.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   output: {
     filename: '[name].bundle.js',
