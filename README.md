@@ -9,3 +9,7 @@ url shortener front end project
 4. HMR
  * homapge
  * entry file
+5. deploy
+6. testing
+7. ci/cd
+8. styled components

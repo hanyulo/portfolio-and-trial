@@ -8,7 +8,7 @@ module.exports = {
   mode: 'development',
   entry: {
     app: [
-      './src/scripts/index.js',
+      './src/index.js',
       'webpack-hot-middleware/client'
     ]
   },
@@ -43,6 +43,11 @@ module.exports = {
           'postcss-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       }
     ]
   }
