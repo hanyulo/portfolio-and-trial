@@ -8,19 +8,14 @@ const webpackConfig = require('./webpack.config');
 
 const compiler = webpack(webpackConfig);
 
-// app.use(express.static(path.resolve(__dirname, './public')));
-
+// option -> writeToDisk: true, can exam files in the dist folder
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath
+    publicPath: webpackConfig.output.publicPath,
   })
 );
 
 app.use(webpackHotMiddleware(compiler));
-
-// app.get('/', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, './views/index.html'));
-// });
 
 const thePort = process.env.PORT || 3000;
 app.listen(thePort, () => {
