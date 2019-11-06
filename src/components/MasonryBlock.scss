@@ -1,0 +1,31 @@
+.gridContainer {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  grid-auto-rows: 15px;
+}
+
+.cardContainer {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.imgWrapper {
+  height: 80px;
+  > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.cardHeader {
+  padding: 10px;
+  font-size: 18px;
+  color: #333;
+  background-color: #e6e6e6;
+}
+
+.cardContent {
+  padding: 10px;
+}

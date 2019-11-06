@@ -1,9 +1,10 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
+import Home from './components/Home';
 
 const App = () => (
   <div className="App">
-    <h1> Hello, World! lalala</h1>
+    <Home />
   </div>
 );
 
