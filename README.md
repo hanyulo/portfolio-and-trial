@@ -13,3 +13,7 @@ url shortener front end project
 6. testing
 7. ci/cd
 8. styled components
+9. typescript / flow
+10. jest
+11. login: difference between storage
+12. code split
