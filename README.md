@@ -14,6 +14,9 @@ url shortener front end project
 7. ci/cd
 8. styled components
 9. typescript / flow
+  * choose typescript
+  * flow doc is not thorough and clear
 10. jest
 11. login: difference between storage
 12. code split
+13. MasoneryBlock
