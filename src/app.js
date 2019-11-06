@@ -1,11 +1,22 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
-import Home from './components/Home';
+import {
+  Switch,
+  Route,
+} from 'react-router-dom';
+import routes from './routes';
 
 const App = () => (
-  <div className="App">
-    <Home />
-  </div>
+  <Switch>
+    {
+      routes.map((route, routeIndex) => (
+        <Route
+          key={`react-route-${routeIndex}`}
+          {...route}
+        />
+      ))
+    }
+  </Switch>
 );
 
 export default hot(App);

@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "url shortener front end project",
   "dependencies": {
+    "connect-history-api-fallback": "^1.6.0",
     "express": "^4.17.1",
+    "history": "^4.10.1",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-hot-loader": "^4.12.15"
+    "react-hot-loader": "^4.12.15",
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

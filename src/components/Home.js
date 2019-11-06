@@ -5,9 +5,10 @@ import MasonryBlock from './MasonryBlock';
 
 const MOCK_DATA_CARDS = [
   {
-    headerText: 'Side Project',
+    headerText: 'URL Shortener',
     imgSrc: '/assets/landscape.jpeg',
     content: 'this is long content this is long content',
+    redirectUrl: '/url-shortener',
   },
   {
     headerText: 'Side Project',
@@ -36,12 +37,14 @@ const MOCK_DATA_CARDS = [
   },
 ];
 
-const Home = () => (
+const Home = ({ history }) => (
   <div className={styles.container}>
-    <h2>Han-Yu Tseng(曾涵郁)</h2>
+    <h1>Han-Yu Tseng(曾涵郁)</h1>
     <div className={styles.text}>I am terrible at drawing. Once I figure it out that I am able to make drawing with Front-end web development, I can't stop myself from learning more.</div>
     <div className={styles.girdSection}>
+      <h2>Side/Practice Projects</h2>
       <MasonryBlock
+        history={history}
         data={MOCK_DATA_CARDS}
       />
     </div>

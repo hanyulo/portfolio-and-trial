@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
-const path = require('path');
+// const path = require('path');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const historyApiFallback = require('connect-history-api-fallback');
 const webpackConfig = require('./webpack.config');
 
+
 const compiler = webpack(webpackConfig);
+
+// so you can access /path directly from browser
+app.use(historyApiFallback());
 
 // option -> writeToDisk: true, can exam files in the dist folder
 app.use(

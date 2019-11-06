@@ -38,6 +38,11 @@ class MasonryBlock extends Component {
     this._resizeAllGridItems();
   }
 
+  _onClickCard(redirectUrl) {
+    const { history } = this.props;
+    history.push(redirectUrl);
+  }
+
   _resizeGridItem(item, rowHeight, rowGap) {
     const rowSpan = Math.ceil((+item.firstChild.offsetHeight + rowGap) / (rowHeight + rowGap));
     item.style.gridRowEnd = `span ${rowSpan}`;
@@ -56,7 +61,7 @@ class MasonryBlock extends Component {
 
   render() {
     const { data } = this.props;
-    const Cards = data.map(({ headerText, imgSrc, content }, index) => (
+    const Cards = data.map(({ headerText, imgSrc, content, redirectUrl }, index) => (
       <div
         key={`masonery_block_${index}`}
         className={styles.cardContainer}
@@ -65,6 +70,12 @@ class MasonryBlock extends Component {
             this.gridItems.push(node);
           }
         }}
+        role="button"
+        tabIndex={0}
+        onClick={() => {
+          this._onClickCard(redirectUrl);
+        }}
+        onKeyPress={() => {}}
       >
         <div>
           <div className={styles.cardHeader}>{headerText}</div>
@@ -96,15 +107,19 @@ MasonryBlock.defaultProps = {
     headerText: '',
     imgSrc: '',
     content: '',
+    redirectUrl: '',
   },
 };
 
 MasonryBlock.propTypes = {
-  data: PropTypes.shape({
-    headerText: PropTypes.string,
-    imgSrc: PropTypes.string,
-    content: PropTypes.string,
-  }),
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      headerText: PropTypes.string,
+      imgSrc: PropTypes.string,
+      content: PropTypes.string,
+      redirectUrl: PropTypes.string,
+    })
+  ),
 };
 
 export default MasonryBlock;
