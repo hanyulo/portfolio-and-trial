@@ -18,5 +18,7 @@ url shortener front end project
   * flow doc is not thorough and clear
 10. jest
 11. login: difference between storage
-12. code split
+12. code splitting
 13. MasoneryBlock
+14. serverside rendering
+15. lazy load (react lazy load)
