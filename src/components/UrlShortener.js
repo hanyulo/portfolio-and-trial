@@ -7,13 +7,11 @@ const apiProduct = 'https://url-shortener-back.appspot.com';
 const apiOrigin = config.nodeEnvIsProd ? apiProduct : apiDev;
 
 
-
-
 const UrlShortener = () => {
   const [url, setUrl] = useState('');
   const onInputChange = (e) => {
     setUrl(e.target.value);
-  }
+  };
   const submitHandler = async () => {
     const originalUrl = url;
     const postData = async (obj) => {
@@ -34,7 +32,7 @@ const UrlShortener = () => {
     };
     const data = await postData({ originalUrl });
     console.log(data);
-  }
+  };
   return (
     <div className={styles.container}>
       <h1>url shortener</h1>
@@ -53,6 +51,6 @@ const UrlShortener = () => {
       </div>
     </div>
   );
-}
+};
 
 export default UrlShortener;

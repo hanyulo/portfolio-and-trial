@@ -1,6 +1,5 @@
 const config = require('./config/config');
-const webpackConfig = (() => {
-  return require(`./webpack.config.${config.nodeENV}.js`);
-})();
+
+const webpackConfig = require(`./webpack.config.${config.nodeENV}.js`);
 
 module.exports = webpackConfig;

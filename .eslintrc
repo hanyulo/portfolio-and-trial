@@ -3,6 +3,9 @@
   "rules": {
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
+    "import/no-dynamic-require": "off",
+    "react/no-array-index-key": "off",
+    "no-param-reassign": "off",
     "semi": [2, 'always'],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },

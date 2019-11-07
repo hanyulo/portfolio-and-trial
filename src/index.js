@@ -1,10 +1,12 @@
-import "@babel/polyfill";
+/* eslint-disable comma-dangle */
+import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
 import { BrowserRouter } from 'react-router-dom';
+import App from './app';
 
 ReactDOM.render(
   <BrowserRouter>
     <App />
-  </BrowserRouter>, document.getElementById('root'));
+  </BrowserRouter>, document.getElementById('root')
+);

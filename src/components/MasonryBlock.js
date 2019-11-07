@@ -2,31 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './MasonryBlock.scss';
 
-/*
-<Card
-  ref={(node) => {
-    if (node) {
-      this.gridItems.push(node);
-    }
-  }}
-  key={`masonery_block_${index}`}
-  headerText={headerText}
-  imgSrc={imgSrc}
-  content={content}
-/>
-*/
-
-const Card = ({ headerText, imgSrc, content }) => (
-  <div className={styles.cardContainer}>
-    <div className={styles.cardHeader}>{headerText}</div>
-    <div className={styles.imgWrapper}>
-      <img src={imgSrc} />
-    </div>
-    <div className={styles.cardContent}>{content}</div>
-  </div>
-);
-
-
 class MasonryBlock extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +36,12 @@ class MasonryBlock extends Component {
 
   render() {
     const { data } = this.props;
-    const Cards = data.map(({ headerText, imgSrc, content, redirectUrl }, index) => (
+    const Cards = data.map(({
+      headerText,
+      imgSrc,
+      content,
+      redirectUrl,
+    }, index) => (
       <div
         key={`masonery_block_${index}`}
         className={styles.cardContainer}
@@ -80,7 +60,7 @@ class MasonryBlock extends Component {
         <div>
           <div className={styles.cardHeader}>{headerText}</div>
           <div className={styles.imgWrapper}>
-            <img src={imgSrc} />
+            <img src={imgSrc} alt={`project_${headerText}_thumbnail`} />
           </div>
           <div className={styles.cardContent}>{content}</div>
         </div>
@@ -118,8 +98,11 @@ MasonryBlock.propTypes = {
       imgSrc: PropTypes.string,
       content: PropTypes.string,
       redirectUrl: PropTypes.string,
-    })
+    }),
   ),
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default MasonryBlock;
