@@ -1,4 +1,4 @@
-module.exports = {
+export default Object.freeze({
   production: 'production',
   development: 'development',
-};
+});

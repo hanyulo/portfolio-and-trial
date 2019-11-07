@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const historyApiFallback = require('connect-history-api-fallback');
-const webpackConfig = require('./webpack.config');
+const webpackConfig = require('./webpack.config.development');
 
 
 const compiler = webpack(webpackConfig);
