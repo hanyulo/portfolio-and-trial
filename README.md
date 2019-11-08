@@ -63,6 +63,7 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
     * choose typescript
     * flow doc is not thorough and clear
 * [ ] CHANGELOG.md
+* [ ] Docker
 
 
 ## Trial
