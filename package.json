@@ -61,7 +61,8 @@
     "test:snapshot": "jest --updateSnapshot",
     "test": "jest",
     "start:dev": "NODE_ENV=development node webpack-dev-server.js",
-    "start": "npm run build && node_modules/.bin/pm2 start ecosystem.config.js",
+    "start:prod": "npm run build && node_modules/.bin/pm2 start ecosystem.config.js",
+    "start": "node_modules/.bin/pm2 start ecosystem.config.js",
     "build": "webpack --config webpack.config.production.js",
     "gcloud:deploy": "gcloud app deploy --project portfolio-and-trial --version 1-0-0",
     "gcloud:browse": "gcloud app browse"
