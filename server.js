@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, './dist/index.html'));
 });
 
-const thePort = process.env.PORT || 3000;
+const thePort = process.env.PORT || 8080;
 app.listen(thePort, () => {
   console.log(`the sever is running on port: ${thePort}`);
 });

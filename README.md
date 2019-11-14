@@ -14,7 +14,11 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
     * Fully working server for my projects
     * Generate static portfolio page and extract related code to different repo
 
-
+## Caveat
+* PORT
+    * dev mode: 3000
+    * Prod mode: 8080
+        * google app engine only route incoming requests to port 8080 [ref](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#listening_to_port_8080)
 
 ## Compound
 

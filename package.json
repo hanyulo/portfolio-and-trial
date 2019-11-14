@@ -60,7 +60,7 @@
   "scripts": {
     "test:snapshot": "jest --updateSnapshot",
     "test": "jest",
-    "start:dev": "NODE_ENV=development node webpack-dev-server.js",
+    "start:dev": "NODE_ENV=development PORT=3000 node webpack-dev-server.js",
     "start:prod": "npm run build && node_modules/.bin/pm2 start ecosystem.config.js",
     "start": "node_modules/.bin/pm2 start ecosystem.config.js",
     "build": "webpack --config webpack.config.production.js",
