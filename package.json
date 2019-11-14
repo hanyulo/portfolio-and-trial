@@ -1,6 +1,6 @@
 {
   "name": "portfolio-and-trial",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "url shortener front end project",
   "dependencies": {
     "connect-history-api-fallback": "^1.6.0",
@@ -61,8 +61,9 @@
     "test:snapshot": "jest --updateSnapshot",
     "test": "jest",
     "start:dev": "NODE_ENV=development PORT=3000 node webpack-dev-server.js",
-    "start:prod": "npm run build && node_modules/.bin/pm2 start ecosystem.config.js",
-    "start": "node_modules/.bin/pm2 start ecosystem.config.js",
+    "start:prod": "npm run build && npm run delete:pm2 && node_modules/.bin/pm2 start ecosystem.config.js",
+    "delete:pm2": "node_modules/.bin/pm2 delete portfolio-and-trial",
+    "start": "npm run delete:pm2 && node_modules/.bin/pm2 start ecosystem.config.js",
     "build": "webpack --config webpack.config.production.js",
     "gcloud:deploy": "gcloud app deploy --project portfolio-and-trial --version 1-0-0",
     "gcloud:browse": "gcloud app browse"
