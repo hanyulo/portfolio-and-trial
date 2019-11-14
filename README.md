@@ -21,14 +21,19 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
 #### General Setup
 * :fire: Babel 7
 * :fire: Webpack 4
-* :fire: Eslint 6 - AirBnB  
+* :fire: Eslint 6 - AirBnB
+* :white_check_mark: Testing Framework
+    * :fire: Jest
+    * :fire: Enzyme
+    * :fire: react-test-renderer
+    * :fire: react-testing-library
 * :white_check_mark: CSS Modules
 * :white_check_mark: How Module Replacement
 * :white_check_mark: Dev Mode with Node Server
 * :white_check_mark: Prod Mode to Dist
 
 #### List of Main Dependencies
-* :white_check_mark: react ^16.11
+* :white_check_mark: react@^16.11
     * :fire: with hook implementation
 * :fire: react-router-dom 5
 
@@ -36,9 +41,11 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
 * [ ] redux
 * [ ] redux thunk
 * [ ] testing
-    * [ ] Jest/Enzyme
-    * [ ] Mocha
+    * [x] Jest
+    * [x] Enzyme
     * [ ] styled-components
+    * [x] react-test-renderer
+    * [x] react-testing-library
 * [ ] styled-components
 * [ ] sub issues of HMR
     * entry file
@@ -56,14 +63,17 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
     * [ ] api-key
     * [ ] login process
         * [ ] storage check (cookie/localStorage)
-* [ ] CI/CD
-    * [ ] circleCI
-    * [ ] google app engine
+
 * [ ] typescript || flow
     * choose typescript
     * flow doc is not thorough and clear
 * [ ] CHANGELOG.md
-* [ ] Docker
+* [ ] CI/CD
+    * [ ] TravisCI
+    * [ ] Google Engine
+* [ ] Eslint pre commit hook (TDD)
+* [ ] Automatic Dark Mode
+* [ ] JS DOC
 
 
 ## Trial
@@ -71,3 +81,12 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
 * [ ] AMP
 * [ ] Service Workers
 * [ ] XXS / CSRF
+* [ ] google compute engine
+    * current progress
+        * start script (executable)
+            * need to make a template and use metadata to run the script
+        * single instance
+* [ ] CI/CD
+    * [ ] circleCI
+    * [ ] Google Compute Engine
+* [ ] Docker
