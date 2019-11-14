@@ -62,7 +62,7 @@
     "test": "jest",
     "start:dev": "NODE_ENV=development PORT=3000 node webpack-dev-server.js",
     "start:prod": "npm run build && npm run delete:pm2 && node_modules/.bin/pm2 start ecosystem.config.js",
-    "delete:pm2": "node_modules/.bin/pm2 delete portfolio-and-trial",
+    "delete:pm2": "node_modules/.bin/pm2 delete --silent portfolio-and-trial",
     "start": "npm run delete:pm2 && node_modules/.bin/pm2 start ecosystem.config.js",
     "build": "webpack --config webpack.config.production.js",
     "gcloud:deploy": "gcloud app deploy --project portfolio-and-trial --version 1-0-0",
