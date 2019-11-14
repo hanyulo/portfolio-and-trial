@@ -1,12 +1,13 @@
 {
-  "name": "url-shortener-front-end",
-  "version": "1.0.0",
+  "name": "portfolio-and-trial",
+  "version": "1.0.2",
   "description": "url shortener front end project",
   "dependencies": {
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^3.4.0",
     "express": "^4.17.1",
     "history": "^4.10.1",
+    "pm2": "^4.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -40,7 +41,6 @@
     "jest": "^24.9.0",
     "node-sass": "^4.13.0",
     "nodemon": "^1.19.4",
-    "pm2": "^4.1.2",
     "postcss-loader": "^3.0.0",
     "react-test-renderer": "^16.11.0",
     "sass-loader": "^8.0.0",
