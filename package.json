@@ -17,11 +17,14 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@testing-library/react": "^9.3.2",
     "autoprefixer": "^9.7.1",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-standard": "^14.1.0",
@@ -33,10 +36,13 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-standard": "^4.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
     "node-sass": "^4.13.0",
     "nodemon": "^1.19.4",
     "pm2": "^4.1.2",
     "postcss-loader": "^3.0.0",
+    "react-test-renderer": "^16.11.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
@@ -44,8 +50,16 @@
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+      "automock": "true"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:snapshot": "jest --updateSnapshot",
+    "test": "jest",
     "start:dev": "NODE_ENV=development node webpack-dev-server.js",
     "start": "npm run build && node_modules/.bin/pm2 start ecosystem.config.js",
     "build": "webpack --config webpack.config.production.js"

@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './MasonryBlock.scss';
+import Card from './Card';
 
 class MasonryBlock extends Component {
   constructor(props) {
     super(props);
     this.gridContainer = null;
     this.gridItems = [];
+    this.onCardRef = this._onCardRef.bind(this);
+    this.onClickCard = this._onClickCard.bind(this);
   }
 
   componentDidMount() {
     this._resizeAllGridItems();
+  }
+
+  _onCardRef(node) {
+    this.gridItems.push(node);
   }
 
   _onClickCard(redirectUrl) {
@@ -42,29 +49,15 @@ class MasonryBlock extends Component {
       content,
       redirectUrl,
     }, index) => (
-      <div
+      <Card
+        headerText={headerText}
+        imgSrc={imgSrc}
+        content={content}
+        redirectUrl={redirectUrl}
+        onCardRef={this.onCardRef}
+        onClickCard={this.onClickCard}
         key={`masonery_block_${index}`}
-        className={styles.cardContainer}
-        ref={(node) => {
-          if (node) {
-            this.gridItems.push(node);
-          }
-        }}
-        role="button"
-        tabIndex={0}
-        onClick={() => {
-          this._onClickCard(redirectUrl);
-        }}
-        onKeyPress={() => {}}
-      >
-        <div>
-          <div className={styles.cardHeader}>{headerText}</div>
-          <div className={styles.imgWrapper}>
-            <img src={imgSrc} alt={`project_${headerText}_thumbnail`} />
-          </div>
-          <div className={styles.cardContent}>{content}</div>
-        </div>
-      </div>
+      />
     ));
     return (
       <div

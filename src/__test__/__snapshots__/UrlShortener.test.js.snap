@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UrlShortener /> snapshot check 1`] = `
+<div
+  className="container"
+>
+  <h1>
+    url shortener
+  </h1>
+  <div
+    className="inputPanel"
+  >
+    <input
+      className="input"
+      onChange={[Function]}
+      placeholder="original URL"
+      type="text"
+    />
+    <input
+      className="button"
+      data-testid="urlShortener-button"
+      onClick={[Function]}
+      type="submit"
+      value="Submit"
+    />
+  </div>
+</div>
+`;

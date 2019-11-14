@@ -18,6 +18,8 @@
     "afterAll": "readonly",
     "fetch": 'readonly',
     "document": 'readonly',
-    "window": 'readonly'
+    "window": 'readonly',
+    "expect": 'readonly',
+    "jest": 'readonly',
   }
 }

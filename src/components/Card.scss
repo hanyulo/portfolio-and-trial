@@ -1,0 +1,26 @@
+.cardContainer {
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.cardHeader {
+  padding: 10px;
+  font-size: 18px;
+  color: #333;
+  background-color: #e6e6e6;
+}
+
+.cardContent {
+  padding: 10px;
+}
+
+.imgWrapper {
+  height: 80px;
+  > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
