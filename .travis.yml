@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- 10
+before_install:
+- openssl aes-256-cbc -K $encrypted_378e1560ac3e_key -iv $encrypted_378e1560ac3e_iv -in client-secret.json.enc -out client-secret.json -d
+- gcloud auth activate-service-account --key-file client-secret.json
+install:
+- gcloud config set project portfolio-and-trial
+before_script:
+- npm install
+script:
+- npm run test:snapshot && gcloud -q app deploy app.yaml --promote --version 1-0-0
