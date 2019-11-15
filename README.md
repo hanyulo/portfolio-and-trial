@@ -20,6 +20,9 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
     * Prod mode: 8080
         * google app engine only route incoming requests to port 8080 [ref](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#listening_to_port_8080)
 
+## Note
+* [TravisCI + Google App Engine Note](https://github.com/hanyulo/url-shortener-back-end#travis-ci-set-up)
+
 ## Compound
 
 #### General Setup
@@ -78,6 +81,7 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
 * [ ] Eslint pre commit hook (TDD)
 * [ ] Automatic Dark Mode
 * [ ] JS DOC
+* [ ] Solve PM2 issue on google app engine
 
 
 ## Trial
