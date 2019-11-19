@@ -60,14 +60,15 @@
   "scripts": {
     "test:snapshot": "jest --updateSnapshot",
     "test": "jest",
-    "start:dev": "NODE_ENV=development PORT=3000 node webpack-dev-server.js",
-    "start:prod": "npm run pm2:restart; npm run build && node_modules/.bin/pm2 start ecosystem.config.js",
-    "pm2:restart": "node_modules/.bin/pm2 kill --silent",
-    "start:pm2": "npm run pm2:restart; node_modules/.bin/pm2 start ecosystem.config.js",
-    "start": "node server.js",
     "build": "webpack --config webpack.config.production.js",
     "gcloud:deploy": "gcloud app deploy --project portfolio-and-trial --version 1-0-0",
-    "gcloud:browse": "gcloud app browse"
+    "gcloud:browse": "gcloud app browse",
+    "start:dev": "NODE_ENV=development PORT=3000 node webpack-dev-server.js",
+    "start:prod": "npm run build && node server.js",
+    "start": "node server.js",
+    "pm2:restart": "node_modules/.bin/pm2 kill --silent",
+    "start:prod:pm2": "npm run pm2:restart; npm run build && node_modules/.bin/pm2 start ecosystem.config.js",
+    "start:pm2": "npm run pm2:restart; node_modules/.bin/pm2 start ecosystem.config.js"
   },
   "repository": {
     "type": "git",
