@@ -36,6 +36,7 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
 * :fire: react-router-dom 5
 
 
+
 ## Caveat
 * PORT
     * Dev mode: 3000
@@ -56,8 +57,19 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
 
 #### Server Side Rendering
 * Concept
-    * client side: only for development
-    * server side: production
+    * client code
+        * entry: index.js with `ReactDOM.hydrate`
+        * for both development and production mode
+            * dev: client-side rendering (fully)
+            * prod: event-handler, componentDidMount (partial)
+    * server code
+        * entry: server.js
+            * generate skeleton code
+                * html
+                * part of javascript
+                * full css
+        * only for production
+
 
 * setup notice (bumped errors)
     * production webpack config: target node for `entry: server.js`
@@ -111,11 +123,12 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
     * [ ] production optimization
 * [ ] react setting
     * [ ] lazy load
-    * [ ] server side rendering
-    * [ ] Code Splitting
-* [ ] server side rendering
+    * [x] server side rendering
+    * [ ] Code Splitting - [loadable components](https://github.com/smooth-code/loadable-components)
+* [x] server side rendering
 * [ ] React Helmet
 * [ ] CORS
+    * [x] basic request
     * [ ] api-key
     * [ ] login process
         * [ ] storage check (cookie/localStorage)
@@ -124,9 +137,9 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
     * choose typescript
     * flow doc is not thorough and clear
 * [ ] CHANGELOG.md
-* [ ] CI/CD
-    * [ ] TravisCI
-    * [ ] Google Engine
+* [x] CI/CD
+    * [x] TravisCI
+    * [x] Google Engine
 * [ ] Eslint pre commit hook (TDD)
 * [ ] Automatic Dark Mode
 * [ ] JS DOC
