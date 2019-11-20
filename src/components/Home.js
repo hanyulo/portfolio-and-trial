@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Home.scss';
 import MasonryBlock from './MasonryBlock';
+import withStyles from 'isomorphic-style-loader/withStyles';
+
 
 
 const MOCK_DATA_CARDS = [
@@ -52,4 +54,4 @@ const Home = ({ history }) => (
 );
 
 
-export default Home;
+export default withStyles(styles)(Home);

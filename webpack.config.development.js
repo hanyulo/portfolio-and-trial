@@ -19,7 +19,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      favicon: './public/assets/profile_sketch.png',
       template: './public/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
@@ -41,7 +40,7 @@ module.exports = {
       {
         test: /\.(scss|sass)$/,
         use: [
-          'style-loader',
+          'isomorphic-style-loader',
           {
             loader: 'css-loader',
             options: {

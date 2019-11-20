@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import withStyles from 'isomorphic-style-loader/withStyles';
 import styles from './MasonryBlock.scss';
 import Card from './Card';
 
@@ -98,4 +99,4 @@ MasonryBlock.propTypes = {
   }).isRequired,
 };
 
-export default MasonryBlock;
+export default withStyles(styles)(MasonryBlock);

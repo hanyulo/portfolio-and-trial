@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './UrlShortener.scss';
 import { createShortUrl } from '../utils/api';
+import withStyles from 'isomorphic-style-loader/withStyles';
 
 
 const UrlShortener = () => {
@@ -65,4 +66,4 @@ const UrlShortener = () => {
   );
 };
 
-export default UrlShortener;
+export default withStyles(styles)(UrlShortener);

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Card.scss';
+import withStyles from 'isomorphic-style-loader/withStyles';
+
 
 const Card = ({
   onCardRef,
@@ -49,4 +51,4 @@ Card.propTypes = {
   redirectUrl: PropTypes.string.isRequired,
 };
 
-export default Card;
+export default withStyles(styles)(Card);
