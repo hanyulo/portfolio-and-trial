@@ -136,7 +136,7 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
 * [ ] typescript || flow
     * choose typescript
     * flow doc is not thorough and clear
-* [ ] CHANGELOG.md
+* [x] CHANGELOG.md
 * [x] CI/CD
     * [x] TravisCI
     * [x] Google Engine
