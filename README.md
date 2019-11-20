@@ -14,15 +14,6 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
     * Fully working server for my projects
     * Generate static portfolio page and extract related code to different repo
 
-## Caveat
-* PORT
-    * dev mode: 3000
-    * Prod mode: 8080
-        * google app engine only route incoming requests to port 8080 [ref](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#listening_to_port_8080)
-
-## Note
-* [TravisCI + Google App Engine Note](https://github.com/hanyulo/url-shortener-back-end#travis-ci-set-up)
-
 ## Compound
 
 #### General Setup
@@ -44,6 +35,63 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
     * :fire: with hook implementation
 * :fire: react-router-dom 5
 
+
+## Caveat
+* PORT
+    * Dev mode: 3000
+    * Prod mode: 8080
+        * google app engine only route incoming requests to port 8080 [ref](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#listening_to_port_8080)
+
+## Prod V.S Dev
+|  | Production | Development |
+| --- | --- | --- |
+| Port | 8080 | 3000 |
+| Rendering | Server-Side | Client-Side |
+
+
+## Note
+
+#### Travis CI
+[TravisCI + Google App Engine Note](https://github.com/hanyulo/url-shortener-back-end#travis-ci-set-up)
+
+#### Server Side Rendering
+* Concept
+    * client side: only for development
+    * server side: production
+
+* setup notice (bumped errors)
+    * production webpack config: target node for `entry: server.js`
+    * undefined moduleId
+        * external: `exclude node/express modules`
+    * undefined modulId
+        * scenario: use webpack 4 and compiling node server with optimization
+            * solutions
+                1. need webpack 5 (but has compatiable issue with html-webapck-plugin)
+                2. don't set optimization -> splitChunks: all in webpack 4. [ref1](https://github.com/manuelbieh/react-ssr-setup/blob/master/config/webpack.config.ts/client.base.ts)
+                    ```js
+                        cacheGroups: {
+                          commons: {
+                            test: /[\\/]node_modules[\\/]/,
+                            name: 'vendor',
+                            chunks: 'all',
+                          },
+                        },
+                    ```
+    * var style = document.createElement('style');
+        * isomorphic-style-loader
+    * index.js with `reactDOM.hydrate`
+        * it is client code entry
+        * development
+            * bundle entry for development mode
+        * production
+            1. bundle the client code first, and put it in to dist
+            2. bundle the server code and transfer the server in to dist
+            3. run the server
+                1. browser receive skeleton of app, which include style, html, part of javascript
+                2. browser get client bundle and run the rest of code ( such as componentDidMount )
+                    * [ref](https://stackoverflow.com/questions/33990133/react-componentdidmount-not-firing)
+                    * [ref2](https://reactjs.org/docs/react-dom.html#hydrate)
+
 ## To Do
 * [ ] redux
 * [ ] redux thunk
@@ -64,6 +112,7 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
 * [ ] react setting
     * [ ] lazy load
     * [ ] server side rendering
+    * [ ] Code Splitting
 * [ ] server side rendering
 * [ ] React Helmet
 * [ ] CORS
