@@ -29,6 +29,7 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
 * :white_check_mark: How Module Replacement
 * :white_check_mark: Dev Mode with Node Server
 * :white_check_mark: Prod Mode to Dist
+* :white_check_mark: Server Side Rendering
 
 #### List of Main Dependencies
 * :white_check_mark: react@^16.11
@@ -126,12 +127,16 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
     * [x] server side rendering
     * [ ] Code Splitting - [loadable components](https://github.com/smooth-code/loadable-components)
 * [x] server side rendering
+    * [x] basic implementation
+    * [ ] fetch data from RESTful APIs at server side and insert the data to apps
 * [ ] React Helmet
 * [ ] CORS
     * [x] basic request
     * [ ] api-key
     * [ ] login process
         * [ ] storage check (cookie/localStorage)
+        * [ ] against XSS
+        * [ ] against CSRF
 
 * [ ] typescript || flow
     * choose typescript
@@ -143,14 +148,16 @@ Now, this project works as my portfolio landing and trial of several web-dev-fea
 * [ ] Eslint pre commit hook (TDD)
 * [ ] Automatic Dark Mode
 * [ ] JS DOC
-* [ ] Solve PM2 issue on google app engine
+* [ ] ~~Solve PM2 issue on google app engine~~
+* [ ] Icons to base64Url
+* [ ] XSS Example
+* [ ] CSRF Example
 
 
 ## Trial
 * [ ] PWA
 * [ ] AMP
 * [ ] Service Workers
-* [ ] XXS / CSRF
 * [ ] google compute engine
     * current progress
         * start script (executable)
