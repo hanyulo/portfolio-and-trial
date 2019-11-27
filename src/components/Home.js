@@ -13,29 +13,34 @@ const MOCK_DATA_CARDS = [
     redirectUrl: '/url-shortener',
   },
   {
-    headerText: 'Side Project',
-    imgSrc: '/assets/landscape.jpeg',
-    content: 'this is long content this is long content this is long content this is long content this is long content ',
+    headerText: 'XSS Demo',
+    imgSrc: '/assets/hacker.png',
+    content: 'this is XXS Demo, which contains three basic XSS examples as following. 1. Stored XSS 2. Reflected XSS 3. DOM-Based XSS',
+    redirectUrl: 'xss-demo',
   },
   {
     headerText: 'Side Project',
     imgSrc: '/assets/landscape.jpeg',
     content: 'this is test content this is test content this is test content this is test content this is test content',
+    redirectUrl: '',
   },
   {
     headerText: 'Side Project',
     imgSrc: '/assets/landscape.jpeg',
     content: 'this is test content',
+    redirectUrl: '',
   },
   {
     headerText: 'Side Project',
     imgSrc: '/assets/landscape.jpeg',
     content: 'this is test content this is test content this is test content',
+    redirectUrl: '',
   },
   {
     headerText: 'Side Project',
     imgSrc: '/assets/landscape.jpeg',
     content: 'this is test content',
+    redirectUrl: '',
   },
 ];
 

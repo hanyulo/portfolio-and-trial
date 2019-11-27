@@ -1,5 +1,6 @@
 import Home from './components/Home';
 import UrlShortener from './components/UrlShortener';
+import XSSDemo from './components/XSSDemo';
 
 const routes = [
   {
@@ -10,6 +11,10 @@ const routes = [
   {
     path: '/url-shortener',
     component: UrlShortener,
+  },
+  {
+    path: '/xss-demo',
+    component: XSSDemo,
   },
 ];
 
