@@ -7,13 +7,14 @@
     "core-js": "^3.4.0",
     "express": "^4.17.1",
     "history": "^4.10.1",
+    "isomorphic-style-loader": "^5.1.0",
+    "lodash": "^4.17.15",
     "pm2": "^4.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-hot-loader": "^4.12.15",
-    "react-router-dom": "^5.1.2",
-    "isomorphic-style-loader": "^5.1.0"
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
