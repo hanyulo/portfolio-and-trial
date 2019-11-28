@@ -1,6 +1,10 @@
 # Changelog
 
-## 1-0-9
+## 1-0-11
+- Finish XSS Demo
+    - DOMBased
+
+## 1-0-10
 - Add XSS Demo with two types
     - Reflected
     - Stored
