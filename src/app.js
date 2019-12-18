@@ -19,4 +19,5 @@ const App = () => (
   </Switch>
 );
 
-export default hot(App);
+const exportedApp = module.hot ? hot(App) : App;
+export default exportedApp;
