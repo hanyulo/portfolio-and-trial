@@ -1,6 +1,8 @@
+import React from 'react';
 import Home from './components/Home';
 import UrlShortener from './components/UrlShortener';
 import XSSDemo from './components/XSSDemo';
+import ErrorPage from './components/ErrorPage';
 
 const routes = [
   {
@@ -15,6 +17,18 @@ const routes = [
   {
     path: '/xss-demo',
     component: XSSDemo,
+  },
+  {
+    render: ({ staticContext }) => {
+      if (staticContext) {
+        staticContext.statusCode = 404;
+      }
+      return (
+        <ErrorPage
+          webStatus={404}
+        />
+      );
+    },
   },
 ];
 
