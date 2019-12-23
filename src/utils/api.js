@@ -2,7 +2,7 @@ import config from '../../config/config';
 
 const { apiOrigin } = config;
 
-const getPostOption = (body) => Object.freeze({
+const postOption = (body) => Object.freeze({
   method: 'POST',
   mode: 'cors',
   cache: 'no-cache',
@@ -14,6 +14,7 @@ const getPostOption = (body) => Object.freeze({
   referrer: 'no-referrer',
   body: JSON.stringify(body),
 });
+
 
 const asyncResolver = async (promise) => {
   const res = {
@@ -31,14 +32,33 @@ const asyncResolver = async (promise) => {
 };
 
 const createShortUrl = async (bodyObj) => {
-  const res = await asyncResolver(fetch(`${apiOrigin}/api/shorturl/new`, getPostOption(bodyObj)));
+  const res = await asyncResolver(fetch(`${apiOrigin}/api/shorturl/new`, postOption(bodyObj)));
+  return res;
+};
+
+const fetchUserProfile = async (accessToken) => {
+  const options = {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${accessToken}`,
+    },
+    redirect: 'follow',
+    referrer: 'no-referrer',
+  };
+  const res = await asyncResolver(fetch(`${apiOrigin}/api/retrieve-user-profile`, options));
   return res;
 };
 
 export default {
   createShortUrl,
+  fetchUserProfile,
 };
 
 export {
   createShortUrl,
+  fetchUserProfile,
 };

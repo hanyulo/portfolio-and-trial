@@ -5,18 +5,30 @@ import {
   Route,
 } from 'react-router-dom';
 import routes from './routes';
+import AppShell from './containers/AppShell';
 
-const App = () => (
-  <Switch>
-    {
-      routes.map((route, routeIndex) => (
-        <Route
-          key={`react-route-${routeIndex}`}
-          {...route}
-        />
-      ))
-    }
-  </Switch>
+const App = ({ userProfile }) => (
+  <Route
+    render={(props) => {
+      return (
+        <AppShell
+          location={props.location}
+          userProfile={userProfile}
+        >
+          <Switch>
+            {
+              routes.map((route, routeIndex) => (
+                <Route
+                  key={`react-route-${routeIndex}`}
+                  {...route}
+                />
+              ))
+            }
+          </Switch>
+        </AppShell>
+      );
+    }}
+  />
 );
 
 const exportedApp = module.hot ? hot(App) : App;
