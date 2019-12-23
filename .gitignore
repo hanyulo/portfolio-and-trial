@@ -65,6 +65,7 @@ typings/
 
 # prodution
 dist/
+dev-dist/
 
 # travis-ci
 client-secret.json
