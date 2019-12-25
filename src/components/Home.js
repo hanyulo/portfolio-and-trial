@@ -1,8 +1,7 @@
 import React from 'react';
+import withStyles from 'isomorphic-style-loader/withStyles';
 import styles from './Home.scss';
 import MasonryBlock from './MasonryBlock';
-import withStyles from 'isomorphic-style-loader/withStyles';
-
 
 
 const MOCK_DATA_CARDS = [
@@ -16,13 +15,13 @@ const MOCK_DATA_CARDS = [
     headerText: 'XSS Demo',
     imgSrc: '/assets/hacker.png',
     content: 'this is XXS Demo, which contains three basic XSS examples as following. 1. Stored XSS 2. Reflected XSS 3. DOM-Based XSS',
-    redirectUrl: 'xss-demo',
+    redirectUrl: '/xss-demo',
   },
   {
-    headerText: 'Side Project',
+    headerText: 'darhboard',
     imgSrc: '/assets/landscape.jpeg',
-    content: 'this is test content this is test content this is test content this is test content this is test content',
-    redirectUrl: '',
+    content: 'the dashboard that implement sigin/up process fully',
+    redirectUrl: '/dashboard',
   },
   {
     headerText: 'Side Project',

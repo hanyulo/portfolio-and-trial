@@ -1,0 +1,41 @@
+.container {
+  max-width: 600px;
+  margin: 30px auto 30px auto;
+}
+
+
+.header {
+  padding: 3px 0;
+  border-bottom: 1px solid #e1e4e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.logFunc {
+  cursor: pointer;
+}
+
+.formGroup {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .infoBox {
+    background-color: #f2f2f2;
+    padding: 6px 8px;
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+.error {
+  color: #D8000C;
+  font-size: 14px;
+}
