@@ -6,6 +6,7 @@
     "import/no-dynamic-require": "off",
     "react/no-array-index-key": "off",
     "no-param-reassign": "off",
+    "react/jsx-props-no-spreading": "off",
     "semi": [2, 'always'],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
@@ -22,5 +23,6 @@
     "expect": 'readonly',
     "jest": 'readonly',
     "Headers": readonly,
+    "localStorage": readonly,
   }
 }
