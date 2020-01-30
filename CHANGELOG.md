@@ -1,5 +1,8 @@
 # Changelog
 
+## 1-0-13
+- User Authorization Service is done
+
 ## 1-0-11
 - Finish XSS Demo
     - DOMBased
