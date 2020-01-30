@@ -37,10 +37,10 @@ class AppShell extends Component {
 
   // TODO: this should be deleted after implement auth check in SSR
   _tmpRedirectCheck() {
-    console.log('tmp redirect')
+    console.log('tmp redirect');
     const { history, location } = this.props;
     if (location.pathname === '/dashboard') {
-      history.push('/signin');
+      history.replace('/signin');
     }
   }
 
@@ -82,7 +82,6 @@ class AppShell extends Component {
         this._replaceURL();
       });
     }
-    console.log('accessToken')
     this._tmpRedirectCheck();
   }
 
