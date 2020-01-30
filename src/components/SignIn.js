@@ -74,7 +74,7 @@ class SignIn extends Component {
             <label>Password</label>
             <input
               className={styles.formControl}
-              type="text"
+              type="password"
               onChange={(e) => {
                 this._onChangePassword(e);
               }}

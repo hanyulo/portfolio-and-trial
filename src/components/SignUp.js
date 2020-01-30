@@ -52,12 +52,13 @@ class SignUp extends Component {
 
   _renderForm() {
     const content = displayElementList.map((key) => {
+      const type = key === 'password' ? 'password' : 'text';
       return (
         <dl>
           <dt>
             <label>{nameMap.get(key)}</label>
           </dt>
-          <input type="text" onChange={(e) => { this._onChangeInput(key, e.target.value) }} />
+          <input type={type} onChange={(e) => { this._onChangeInput(key, e.target.value) }} />
         </dl>
       );
     });
