@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserHistory } from 'history';
 import { mount, configure } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 import Adapter from 'enzyme-adapter-react-16';
 import MasonryBlock from '../components/MasonryBlock';
 import Card from '../components/Card';
@@ -52,7 +53,11 @@ const MOCK_DATA_CARDS = [
 
 describe('<MasonryBlock />', () => {
   it('render 6 Cards in the MasonryBlock', () => {
-    const wrapper = mount(<MasonryBlock data={MOCK_DATA_CARDS} history={history} />);
+    const wrapper = mount(
+      <MemoryRouter>
+        <MasonryBlock data={MOCK_DATA_CARDS} history={history} />
+      </MemoryRouter>
+    );
     // this is mocah syntax!!!!
     // expect(wrapper.find('div.cardContainer')).to.have.lengthOf(6);
     expect(wrapper.find(Card)).toHaveLength(6);
