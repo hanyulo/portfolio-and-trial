@@ -1,7 +1,62 @@
 import React, { useState } from 'react';
-import styles from './UrlShortener.scss';
+import styled from 'styled-components';
+// import styles from './UrlShortener.scss';
 import { createShortUrl } from '../utils/api';
-import withStyles from 'isomorphic-style-loader/withStyles';
+
+
+const ErrorComponent = styled.div`
+  margin: 30px 0;
+  color: #D8000C;
+  font-size: 14px;
+`;
+
+const ResultContainer = styled.div`
+  margin: 30px 0;
+  font-size: 18px;
+`;
+
+const ResultContent = styled.div`
+  margin-top: 10px;
+  background-color: #f2f2f2;
+  padding: 6px 8px;
+  margin-left: 10px;
+  display : inline-block;
+`;
+
+const Container = styled.div`
+  max-width: 600px;
+  margin: 30px auto 30px auto;
+`;
+
+const InputPanel = styled.div`
+  margin: 30px 0;
+`;
+
+const Input = styled.input`
+  border: none;
+  border-bottom: 1px solid #333;
+  display: block;
+  width: 100%;
+  outline: none;
+  margin: 10px 0 30px 0;
+  padding: 5px;
+  font-size: 16px;
+`;
+
+const Button = styled.input`
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 130px;
+  padding: 10px 12px;
+  background-color: #333;
+  color: #FFD700;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+`;
 
 
 const UrlShortener = () => {
@@ -22,48 +77,44 @@ const UrlShortener = () => {
   };
 
   const Error = errorState && (
-    <div
-      className={`${styles.error} ${styles.response}`}
+    <ErrorComponent
       data-testid="urlShortener-error"
     >
       There is something wrong with the system
-    </div>
+    </ErrorComponent>
   );
 
   const ResultNote = shortenUrl && (
-    <div className={`${styles.result} ${styles.response}`}>
+    <ResultContainer>
       <span>shorten url: </span>
-      <div
-        className={styles.shortenUrl}
+      <ResultContent
         data-testid="urlShortener-result"
       >
         {shortenUrl}
-      </div>
-    </div>
+      </ResultContent>
+    </ResultContainer>
   );
 
   return (
-    <div className={styles.container}>
+    <Container>
       <h1>url shortener</h1>
-      <div className={styles.inputPanel}>
-        <input
+      <InputPanel>
+        <Input
           type="text"
-          className={styles.input}
           onChange={onInputChange}
           placeholder="original URL"
         />
-        <input
+        <Button
           type="submit"
           value="Submit"
-          className={styles.button}
           onClick={submitHandler}
           data-testid="urlShortener-button"
         />
-      </div>
+      </InputPanel>
       {Error}
       {ResultNote}
-    </div>
+    </Container>
   );
 };
 
-export default withStyles(styles)(UrlShortener);
+export default UrlShortener;
