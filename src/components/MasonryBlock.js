@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import withStyles from 'isomorphic-style-loader/withStyles';
 import styles from './MasonryBlock.scss';
 import Card from './Card';
@@ -27,6 +28,7 @@ class MasonryBlock extends Component {
   }
 
   _resizeGridItem(item, rowHeight, rowGap) {
+    console.log('item.firstChild.offsetHeight: ', item.firstChild.offsetHeight)
     const rowSpan = Math.ceil((+item.firstChild.offsetHeight + rowGap) / (rowHeight + rowGap));
     item.style.gridRowEnd = `span ${rowSpan}`;
   }
@@ -49,17 +51,43 @@ class MasonryBlock extends Component {
       imgSrc,
       content,
       redirectUrl,
-    }, index) => (
-      <Card
-        headerText={headerText}
-        imgSrc={imgSrc}
-        content={content}
-        redirectUrl={redirectUrl}
-        onCardRef={this.onCardRef}
-        onClickCard={this.onClickCard}
-        key={`masonery_block_${index}`}
-      />
-    ));
+      externalLink,
+    }, index) => {
+      const Wrapper = ({children}) => {
+        if (redirectUrl) {
+          return (
+            <div>
+              <Link to={redirectUrl}>
+                {children}
+              </Link>
+            </div>
+          );
+        }
+        return (
+          <div>
+            <a target="_blank" rel="noopener noreferrer" href={externalLink}>
+              {children}
+            </a>
+          </div>
+        );
+      };
+
+      return (
+        <div
+          ref={this.onCardRef}
+        >
+          <Wrapper>
+            <Card
+              headerText={headerText}
+              imgSrc={imgSrc}
+              content={content}
+              redirectUrl={redirectUrl}
+              key={`masonery_block_${index}`}
+            />
+          </Wrapper>
+        </div>
+      );
+    });
     return (
       <div
         className={styles.gridContainer}

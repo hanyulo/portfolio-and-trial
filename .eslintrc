@@ -8,7 +8,8 @@
     "no-param-reassign": "off",
     "react/jsx-props-no-spreading": "off",
     "semi": [2, 'always'],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "arrow-parens": "off",
   },
   "globals": {
     "describe": "readonly",

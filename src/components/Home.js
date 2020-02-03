@@ -1,14 +1,14 @@
 import React from 'react';
-import withStyles from 'isomorphic-style-loader/withStyles';
-import styles from './Home.scss';
+import styled from 'styled-components';
+// import styles from './Home.scss';
 import MasonryBlock from './MasonryBlock';
 
 
-const MOCK_DATA_CARDS = [
+const sideProjects = [
   {
     headerText: 'URL Shortener',
-    imgSrc: '/assets/landscape.jpeg',
-    content: 'this is long content this is long content',
+    imgSrc: '/assets/url_shortener_icon.png',
+    content: 'the small project for getting familiar with node.js',
     redirectUrl: '/url-shortener',
   },
   {
@@ -18,44 +18,97 @@ const MOCK_DATA_CARDS = [
     redirectUrl: '/xss-demo',
   },
   {
-    headerText: 'darhboard',
-    imgSrc: '/assets/landscape.jpeg',
+    headerText: 'Dashboard',
+    imgSrc: '/assets/authorization_icon.png',
     content: 'the dashboard that implement sigin/up process fully',
     redirectUrl: '/dashboard',
   },
   {
-    headerText: 'Side Project',
+    headerText: 'Test',
     imgSrc: '/assets/landscape.jpeg',
     content: 'this is test content',
     redirectUrl: '',
   },
   {
-    headerText: 'Side Project',
+    headerText: 'Test',
     imgSrc: '/assets/landscape.jpeg',
     content: 'this is test content this is test content this is test content',
     redirectUrl: '',
   },
   {
-    headerText: 'Side Project',
+    headerText: 'Test',
     imgSrc: '/assets/landscape.jpeg',
     content: 'this is test content',
     redirectUrl: '',
   },
 ];
 
+const works = [
+  {
+    headerText: 'TheReporter',
+    imgSrc: '/assets/twreporter_icon.png',
+    content: 'The home page of TheReporter official website',
+    externalLink: 'https://www.twreporter.org/',
+  },
+  {
+    headerText: 'Suicide Survivors',
+    imgSrc: '/assets/suicide_survivors_icon.png',
+    content: 'Suicide survivors share their stories and tell us how they face grief and questions',
+    externalLink: 'https://www.twreporter.org/i/walk-with-survivor-of-suicide-gcs',
+  },
+  {
+    headerText: 'PRO360',
+    imgSrc: '/assets/pro360_icon.png',
+    content: 'PRO360 Official Website',
+    externalLink: 'https://www.pro360.com.tw/',
+  },
+];
+
+const Container = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
+const Text = styled.div`
+  font-size: 16px;
+  max-width: 600px;
+`;
+
+const GridSection = styled.div`
+  margin: 30px 0;
+`;
+
+const Title = styled.h1`
+  color: ${props => props.theme.h1Color};
+`;
+
+const SubTitle = styled.h2`
+  font-weight: 700;
+`;
+
 const Home = ({ history }) => (
-  <div className={styles.container}>
-    <h1>Han-Yu Tseng(曾涵郁)</h1>
-    <div className={styles.text}>I am terrible at drawing. Once I figure it out that I am able to make drawing with Front-end web development, I can't stop myself from learning more.</div>
-    <div className={styles.girdSection}>
+  <Container>
+    <Title>Hello!</Title>
+    <SubTitle>My Name is Han-Yu Tseng（曾涵郁）and I'm a Front-end developer</SubTitle>
+    <Text>I am terrible at drawing. Once I figure it out that I am able to make drawing with Front-end web development, I can't stop myself from learning more.</Text>
+    <hr />
+    <GridSection>
+      <h2>Works</h2>
+      <MasonryBlock
+        history={history}
+        data={works}
+      />
+    </GridSection>
+    <GridSection>
       <h2>Side/Practice Projects</h2>
       <MasonryBlock
         history={history}
-        data={MOCK_DATA_CARDS}
+        data={sideProjects}
       />
-    </div>
-  </div>
+    </GridSection>
+  </Container>
 );
 
 
-export default withStyles(styles)(Home);
+export default (Home);

@@ -1,54 +1,65 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Card.scss';
-import withStyles from 'isomorphic-style-loader/withStyles';
+// import styles from './Card.scss';
+import styled from 'styled-components';
 
+
+const Container = styled.div`
+  cursor: pointer;
+  background-color: white;
+  outline: none;
+`;
+
+const Header = styled.div`
+  padding: 10px;
+  font-size: 18px;
+  color: #333;
+  background-color: ${props => props.theme.masonryHeader};
+`;
+
+const Content = styled.div`
+  padding: 10px;
+  background-color: white;
+  color: black;
+`;
+
+const ImgWrapper = styled.div`
+  height: 140px;
+  background-color: #FBFBFB;
+  > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+`;
 
 const Card = ({
-  onCardRef,
-  onClickCard,
   headerText,
   imgSrc,
   content,
-  redirectUrl,
 }) => (
-  <div
-    className={styles.cardContainer}
-    ref={(node) => {
-      if (node) {
-        onCardRef(node);
-        // this.gridItems.push(node);
-      }
-    }}
+  <Container
     role="button"
     tabIndex={0}
-    onClick={() => {
-      onClickCard(redirectUrl);
-    }}
     onKeyPress={() => {}}
   >
     <div>
-      <div className={styles.cardHeader}>{headerText}</div>
-      <div className={styles.imgWrapper}>
+      <Header>{headerText}</Header>
+      <ImgWrapper>
         <img src={imgSrc} alt={`project_${headerText}_thumbnail`} />
-      </div>
-      <div className={styles.cardContent}>{content}</div>
+      </ImgWrapper>
+      <Content>{content}</Content>
     </div>
-  </div>
+  </Container>
 );
 
 Card.defaultProps = {
-  onCardRef: () => {},
-  onClickCard: () => {},
 };
 
 Card.propTypes = {
-  onCardRef: PropTypes.func,
-  onClickCard: PropTypes.func,
   headerText: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  redirectUrl: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles)(Card);
+export default Card;
