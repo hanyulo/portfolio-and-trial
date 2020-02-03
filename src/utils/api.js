@@ -67,7 +67,7 @@ const fetchUserProfile = async (accessToken) => {
   };
   const res = await asyncResolver(fetch(`${apiOrigin}/api/retrieve-user-profile`, options));
   const response = res.data;
-  if (response.ok) {
+  if (_.get(response, 'ok', null)) {
     const userProfile = _.get(response, 'response.data', null);
     setAuthContext({ userProfile, authorized: true });
     return userProfile;
@@ -90,7 +90,7 @@ const signOut = async () => {
   };
   const res = await asyncResolver(fetch(`${apiOrigin}/user/signout`, options));
   const response = res.data;
-  if (response.ok) {
+  if (_.get(response, 'ok', null)) {
     return _.get(response, 'response.statusCode', null);
   }
   return null;
@@ -114,7 +114,7 @@ const signIn = async (email, password) => {
   };
   const res = await asyncResolver(fetch(`${apiOrigin}/user/signin`, options));
   const response = res.data;
-  if (response.ok) {
+  if (_.get(response, 'ok', null)) {
     return {
       ok: true,
     };
@@ -152,7 +152,7 @@ const signUp = async ({
   };
   const res = await asyncResolver(fetch(`${apiOrigin}/user/signup`, options));
   const response = res.data;
-  if (response.ok) {
+  if (_.get(response, 'ok', null)) {
     return {
       ok: true,
       message: _.get(response, 'response.data.message', null),

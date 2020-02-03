@@ -28,7 +28,6 @@ class MasonryBlock extends Component {
   }
 
   _resizeGridItem(item, rowHeight, rowGap) {
-    console.log('item.firstChild.offsetHeight: ', item.firstChild.offsetHeight)
     const rowSpan = Math.ceil((+item.firstChild.offsetHeight + rowGap) / (rowHeight + rowGap));
     item.style.gridRowEnd = `span ${rowSpan}`;
   }
@@ -75,6 +74,7 @@ class MasonryBlock extends Component {
       return (
         <div
           ref={this.onCardRef}
+          key={`masonery_block_${index}`}
         >
           <Wrapper>
             <Card
@@ -82,7 +82,6 @@ class MasonryBlock extends Component {
               imgSrc={imgSrc}
               content={content}
               redirectUrl={redirectUrl}
-              key={`masonery_block_${index}`}
             />
           </Wrapper>
         </div>
