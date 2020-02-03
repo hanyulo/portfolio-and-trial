@@ -1,6 +1,6 @@
 {
   "name": "portfolio-and-trial",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "url shortener front end project",
   "dependencies": {
     "connect-history-api-fallback": "^1.6.0",
