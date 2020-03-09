@@ -2,22 +2,22 @@
 
 exports[`<UrlShortener /> snapshot check 1`] = `
 <div
-  className="UrlShortener__Container-sc-10otsjo-3 dQSNyL"
+  className="UrlShortener__Container-sc-10otsjo-3 fAYdEc"
 >
   <h1>
     url shortener
   </h1>
   <div
-    className="UrlShortener__InputPanel-sc-10otsjo-4 dPrboy"
+    className="UrlShortener__InputPanel-sc-10otsjo-4 hPvJzT"
   >
     <input
-      className="UrlShortener__Input-sc-10otsjo-5 dIkOAC"
+      className="UrlShortener__Input-sc-10otsjo-5 fnxucP"
       onChange={[Function]}
       placeholder="original URL"
       type="text"
     />
     <input
-      className="UrlShortener__Button-sc-10otsjo-6 dzEYVD"
+      className="UrlShortener__Button-sc-10otsjo-6 XFAso"
       data-testid="urlShortener-button"
       onClick={[Function]}
       type="submit"
