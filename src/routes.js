@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import ErrorPage from './components/ErrorPage';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import D3Demo from './components/D3Demo';
 
 const routes = [
   {
@@ -33,6 +34,10 @@ const routes = [
   {
     path: '/signup',
     component: SignUp,
+  },
+  {
+    path: '/d3-demo',
+    component: D3Demo,
   },
   {
     render: ({ staticContext }) => {

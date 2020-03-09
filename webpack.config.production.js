@@ -28,6 +28,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
+  resolve: {
+    alias: {
+      // adjust this path as needed depending on where your webpack config is
+      'styled-components': path.resolve('./node_modules/styled-components'),
+      react: path.resolve('./node_modules/react'),
+      'react-dom': path.resolve('./node_modules/react-dom'),
+    },
+  },
   optimization: {
     splitChunks: {
       chunks: 'all',

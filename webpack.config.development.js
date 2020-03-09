@@ -36,6 +36,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dev-dist'),
     publicPath: '/',
   },
+  resolve: {
+    alias: {
+      // adjust this path as needed depending on where your webpack config is
+      'styled-components': path.resolve('./node_modules/styled-components'),
+      react: path.resolve('./node_modules/react'),
+    },
+  },
   module: {
     rules: [
       {
