@@ -1,5 +1,9 @@
 # Changelog
 
+## 1-0-16
+- d3demo
+- add d3 related projects to work/side project list
+
 ## 1-0-13
 - User Authorization Service is done
 
