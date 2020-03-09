@@ -24,10 +24,10 @@ const sideProjects = [
     redirectUrl: '/dashboard',
   },
   {
-    headerText: 'Test',
-    imgSrc: '/assets/landscape.jpeg',
-    content: 'this is test content',
-    redirectUrl: '',
+    headerText: 'D3 - Demo',
+    imgSrc: '/assets/china_d3_demo_map.png',
+    content: 'this is coronavirus prep project',
+    redirectUrl: '/d3-demo',
   },
   {
     headerText: 'Test',
@@ -61,6 +61,18 @@ const works = [
     imgSrc: '/assets/pro360_icon.png',
     content: 'PRO360 Official Website',
     externalLink: 'https://www.pro360.com.tw/',
+  },
+  {
+    headerText: 'COVID19 in China',
+    imgSrc: '/assets/chinaoutbreak.png',
+    content: 'COVID19 outbreak in china from Taiwan Public Television Service',
+    externalLink: 'https://newmedia.pts.org.tw/chinaoutbreak/',
+  },
+  {
+    headerText: 'COVID19 in China - part2',
+    imgSrc: '/assets/sub-chinaoutbreak.png',
+    content: 'COVID19 day-by-day outbreak analysis in china. from Taiwan Public Television Service',
+    externalLink: 'https://newmedia.pts.org.tw/sub-chinaoutbreak/',
   },
 ];
 
