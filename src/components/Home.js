@@ -26,8 +26,8 @@ const sideProjects = [
   {
     headerText: 'D3 - Demo',
     imgSrc: '/assets/china_d3_demo_map.png',
-    content: 'this is coronavirus prep project',
-    redirectUrl: '/d3-demo',
+    content: 'D3 map demo for coronavirus data-visualization',
+    externalLink: 'https://hanyulo.github.io/coronavirus-outbreak/',
   },
   {
     headerText: 'Test',
@@ -73,6 +73,12 @@ const works = [
     imgSrc: '/assets/sub-chinaoutbreak.png',
     content: 'COVID19 day-by-day outbreak analysis in china. from Taiwan Public Television Service',
     externalLink: 'https://newmedia.pts.org.tw/sub-chinaoutbreak/',
+  },
+  {
+    headerText: 'COVID19 in China - part3',
+    imgSrc: '/assets/sub-chinaoutbreak-taishang.png',
+    content: 'Taishang Exodous caused by COVID-19 outbreak in China',
+    externalLink: 'https://newmedia.pts.org.tw/sub-chinaoutbreak-3-/',
   },
 ];
 
