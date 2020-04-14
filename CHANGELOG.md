@@ -1,4 +1,7 @@
 # Changelog
+## 1-0-19
+- remove d3demo components and replace it with external link
+- add Taishang Exodus project
 
 ## 1-0-16
 - d3demo

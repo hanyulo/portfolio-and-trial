@@ -77,7 +77,7 @@ const works = [
   {
     headerText: 'COVID19 in China - part3',
     imgSrc: '/assets/sub-chinaoutbreak-taishang.png',
-    content: 'Taishang Exodous caused by COVID-19 outbreak in China',
+    content: 'Taishang Exodus caused by COVID-19 outbreak in China',
     externalLink: 'https://newmedia.pts.org.tw/sub-chinaoutbreak-3-/',
   },
 ];
